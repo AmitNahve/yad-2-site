@@ -1,0 +1,30 @@
+<p>add-new works!</p>
+<form [formGroup]="newItemForm">
+    <div class="error" *ngIf="newItemForm.controls['name']?.errors">Product Name field is required</div>
+    <div>
+        Product Name: 
+        <input type="text" formControlName="name" />
+    </div>
+    <div class="error" *ngIf="newItemForm.controls['minlength']?.errors">Product Name min length 2</div>
+    <div class="error" *ngIf="newItemForm.controls['maxlength']?.errors">Title field min length 30</div>
+  
+    <div class="error" *ngIf="newItemForm.controls['city']?.errors">City field is required</div>
+    <div>City: <input type="text" formControlName="city" /></div>
+
+
+    <div class="error" *ngIf="newItemForm.controls['description']?.errors">Description field is required</div>
+    <div>Description: <input type="textarea" formControlName="description" /></div>
+    
+    <div class="error" *ngIf="newItemForm.controls['price']?.errors">Price field is required</div>
+    <div>Price: <input type="text" formControlName="price" /></div>
+    
+    <div class="error" *ngIf="newItemForm.controls['contactPhone']?.errors">Contact Phone field is required</div>
+    <div>Contact Phone: <input type="number" formControlName="contactPhone" /></div>
+    
+    <div class="error" *ngIf="newItemForm.controls['imageUrl']?.errors">
+      image url field is required
+    </div>
+    <div>Image: <input type="text" formControlName="imageUrl" /></div>
+   <button (click)="saveForm()">Submit</button>
+   <div class="error" *ngIf="newItemForm.invalid">Form is not valid</div>
+</form>
